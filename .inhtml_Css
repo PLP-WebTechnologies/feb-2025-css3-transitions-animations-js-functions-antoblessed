@@ -1,0 +1,83 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation and User Preferences</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Animated Page</h1>
+    </header>
+
+    <section>
+        <button id="animateButton" onclick="triggerAnimation()">Click to Animate</button>
+        <div id="imageContainer">
+            <img id="image" src="https://via.placeholder.com/150" alt="Placeholder Image">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Website</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+CSS
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    color: #333;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Animation */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+button.animate {
+    animation: bounce 0.5s ease-in-out;
+}
+
+#image {
+    width: 150px;
+    height: 150px;
+    transition: transform 0.5s ease;
+}
+
+#image.animate {
+    transform: scale(1.2);
+}
+
+/* Styling for container */
+#imageContainer {
+    margin-top: 30px;
